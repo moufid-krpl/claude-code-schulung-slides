@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 02 — Wie Claude Code arbeitet · Claude Code Schulung</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="lesson">
+
+<nav class="topbar">
+  <a class="back" href="../index.html">← Alle Lessons</a>
+  <span class="tb-title">Lesson 02 · Wie Claude Code arbeitet</span>
+  <span class="tb-hint"><b>F</b> Vollbild · <b>←</b> <b>→</b> Navigieren · <b>G</b> Übersicht</span>
+</nav>
+
+<div class="playerbox">
+<div id="fswrap">
+<div class="stage" data-path="lesson-02" tabindex="0" aria-label="Präsentation Lesson 02">
+
+  <!-- 01 · Titel -->
+  <section class="slide" data-title="Titel — Wie Claude Code arbeitet">
+    <div class="s-eyebrow">modul 01 · grundlagen <span class="dim">—</span> lesson 02</div>
+    <div class="t-big">Wie Claude Code arbeitet</div>
+    <div class="t-sub">Lesen, ändern, ausführen — was hinter jeder Aufgabe passiert und warum du trotzdem die Kontrolle behältst.</div>
+    <div class="t-prompt"><span class="chev">❯</span> „Erklär mir dieses Projekt."<span class="cursor"></span></div>
+  </section>
+
+  <!-- 02 · Lernziele -->
+  <section class="slide" data-title="Lernziele">
+    <div class="s-eyebrow">lesson 02 <span class="dim">·</span> lernziele</div>
+    <div class="s-title">Was du nach dieser Lesson kannst</div>
+    <div class="goals">
+      <div class="goal"><span class="n">01</span><div class="g">Verstehen, was „agentisch" bedeutet<small>Claude liest, ändert und führt aus — statt nur zu antworten</small></div></div>
+      <div class="goal"><span class="n">02</span><div class="g">Den Arbeitszyklus kennen<small>Verstehen → Lesen → Ändern → Prüfen → Berichten</small></div></div>
+      <div class="goal"><span class="n">03</span><div class="g">Freigaben als Sicherheitsnetz nutzen<small>nichts läuft ohne dein Ja</small></div></div>
+      <div class="goal"><span class="n">04</span><div class="g">Prompts bauen, die sitzen<small>Ziel + Kontext + Grenzen + Ergebnisform</small></div></div>
+    </div>
+  </section>
+
+  <!-- 03 · Statement -->
+  <section class="slide statement" data-title="Kernaussage">
+    <div class="st-kicker">das wichtigste zuerst</div>
+    <div class="st-text">Claude Code ist kein Chatbot.<br>Es ist ein <em>Kollege mit Werkzeugen</em>.</div>
+    <div class="st-note">Es liest deine Dateien, ändert sie und führt Kommandos aus — im Projektkontext und immer mit deiner Freigabe.</div>
+  </section>
+
+  <!-- 04 · Arbeitszyklus -->
+  <section class="slide" data-title="Der Arbeitszyklus (5 Phasen)">
+    <div class="s-eyebrow">lesson 02 <span class="dim">·</span> arbeitszyklus</div>
+    <div class="s-title">So läuft jede Aufgabe ab</div>
+    <div class="pipe">
+      <div class="pstep"><div class="pn">01</div><div class="pt">Verstehen</div><div class="pd">Aufgabe &amp; Kontext erfassen</div></div>
+      <div class="parr">→</div>
+      <div class="pstep"><div class="pn">02</div><div class="pt">Lesen</div><div class="pd">relevante Dateien selbst finden</div></div>
+      <div class="parr">→</div>
+      <div class="pstep hot"><div class="pn">03</div><div class="pt">Ändern</div><div class="pd">Dateien erstellen &amp; anpassen</div></div>
+      <div class="parr">→</div>
+      <div class="pstep"><div class="pn">04</div><div class="pt">Prüfen</div><div class="pd">Tests &amp; Checks laufen lassen</div></div>
+      <div class="parr">→</div>
+      <div class="pstep"><div class="pn">05</div><div class="pt">Berichten</div><div class="pd">was, wo und warum geändert</div></div>
+    </div>
+  </section>
+
+  <!-- 05 · Die Werkzeuge -->
+  <section class="slide" data-title="Die drei Werkzeuge">
+    <div class="s-eyebrow">lesson 02 <span class="dim">·</span> die werkzeuge</div>
+    <div class="s-title">Drei Werkzeuge — ein Arbeitsplatz</div>
+    <div class="cards3">
+      <div class="mcard">
+        <span class="role">Lesen &amp; Suchen</span>
+        <h3>Dateien lesen</h3>
+        <p>Findet selbstständig die relevanten Stellen im Projekt — du musst nichts hineinkopieren.</p>
+      </div>
+      <div class="mcard">
+        <span class="role">Erstellen &amp; Ändern</span>
+        <h3>Dateien schreiben</h3>
+        <p>Legt Dateien an und ändert Code — als Diff sichtbar, bevor du es übernimmst.</p>
+      </div>
+      <div class="mcard">
+        <span class="role">Ausführen</span>
+        <h3>Terminal-Kommandos</h3>
+        <p>Startet Tests, Builds oder Git — jedes Kommando erst nach deiner Freigabe.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 · Freigaben -->
+  <section class="slide" data-title="Freigaben = Sicherheitsnetz">
+    <div class="s-eyebrow">lesson 02 <span class="dim">·</span> freigaben</div>
+    <div class="s-title">Freigaben — dein Sicherheitsnetz</div>
+    <div class="term">
+      <div class="bar2"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="tt">claude code — mein-projekt</span></div>
+      <pre><span class="k">❯</span> Räum die alten Log-Dateien weg
+<span class="c">  Claude möchte ausführen:</span>
+  <span class="k">rm logs/*.log</span>
+<span class="y2">  Zulassen? [j] Ja · [n] Nein · [i] Immer erlauben</span>
+
+<span class="ok">✓</span> Freigegeben — 14 Dateien entfernt
+<span class="c">  Ohne dein Ja passiert: nichts.</span></pre>
+    </div>
+    <div class="caption">Jedes Kommando, jede Änderung: erst <b style="color:var(--cream)">deine Freigabe</b>, dann die Ausführung.</div>
+  </section>
+
+  <!-- 07 · Projektkontext -->
+  <section class="slide" data-title="Der Projektkontext">
+    <div class="s-eyebrow">lesson 02 <span class="dim">·</span> projektkontext</div>
+    <div class="s-title">Womit Claude arbeitet: dein Kontext</div>
+    <ul class="points">
+      <li><b>Der geöffnete Ordner ist das Sichtfeld</b><small>alles darin kann Claude lesen — alles außerhalb nicht</small></li>
+      <li><b>CLAUDE.md wird automatisch gelesen</b><small>deine Projektregeln gelten in jeder Session — ohne Erinnern</small></li>
+      <li><b>Relevante Dateien findet Claude selbst</b><small>du beschreibst die Aufgabe, nicht die Fundorte</small></li>
+      <li><b>Je aufgeräumter der Ordner, desto besser das Ergebnis</b><small>Chaos im Projekt ist Chaos im Kontext</small></li>
+    </ul>
+  </section>
+
+  <!-- 08 · Vage vs. konkret -->
+  <section class="slide" data-title="Vage vs. konkrete Prompts">
+    <div class="s-eyebrow">lesson 02 <span class="dim">·</span> prompts</div>
+    <div class="s-title">„Mach die Seite schöner"?</div>
+    <div class="dd">
+      <div class="ddcol bad">
+        <h3>✕ &nbsp;Vage</h3>
+        <ul>
+          <li><b>„Mach die Seite schöner"</b> — schöner für wen?</li>
+          <li>Claude muss <b>raten</b> — und rät vielleicht falsch</li>
+          <li>Ergebnis: <b>drei Runden</b> Nacharbeit</li>
+        </ul>
+      </div>
+      <div class="ddcol good">
+        <h3>✓ &nbsp;Konkret</h3>
+        <ul>
+          <li><b>„Zentriere das Formular,</b> max. 400 px breit"</li>
+          <li><b>„Abstände wie im Header"</b> — messbare Vorgabe</li>
+          <li>Ergebnis: sitzt <b>beim ersten Anlauf</b></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 · Prompt-Formel -->
+  <section class="slide" data-title="Die Prompt-Formel">
+    <div class="s-eyebrow">lesson 02 <span class="dim">·</span> prompt-formel</div>
+    <div class="s-title">Die Formel: vier Bausteine</div>
+    <div class="cards4">
+      <div class="mcard">
+        <span class="role">Baustein 1</span>
+        <h3>Ziel</h3>
+        <p>„Baue ein Kontaktformular mit Name, E-Mail und Nachricht."</p>
+      </div>
+      <div class="mcard">
+        <span class="role">Baustein 2</span>
+        <h3>Kontext</h3>
+        <p>„Es gehört auf die Seite src/kontakt.html, Stil wie die Startseite."</p>
+      </div>
+      <div class="mcard">
+        <span class="role">Baustein 3</span>
+        <h3>Grenzen</h3>
+        <p>„Keine neuen Bibliotheken — und die .env nicht anfassen."</p>
+      </div>
+      <div class="mcard">
+        <span class="role">Baustein 4</span>
+        <h3>Ergebnisform</h3>
+        <p>„Zeig mir den Diff und erklär in zwei Sätzen, was du geändert hast."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · Grenzen & Risiken -->
+  <section class="slide" data-title="Grenzen &amp; Risiken">
+    <div class="s-eyebrow">lesson 02 <span class="dim">·</span> grenzen &amp; risiken</div>
+    <div class="s-title">Wo du wachsam bleibst</div>
+    <ul class="points">
+      <li><b>Annahmen prüfen</b><small>Claude kann falsch raten — bei Unklarheit lieber nachfragen lassen</small></li>
+      <li><b>Diffs lesen, bevor du übernimmst</b><small>besonders bei großen Änderungen: erst verstehen, dann annehmen</small></li>
+      <li><b>Sensible Daten &amp; Produktivsysteme</b><small>nur mit Vorsicht — Zugangsdaten und Live-Systeme sind tabu ohne Plan</small></li>
+      <li><b>Kosten im Blick behalten</b><small>jede Anfrage kostet Zeit und Tokens — klein anfangen, gezielt arbeiten</small></li>
+    </ul>
+  </section>
+
+  <!-- 11 · Statement -->
+  <section class="slide statement" data-title="Du bleibst der Chef">
+    <div class="st-kicker">arbeitsteilung</div>
+    <div class="st-text">Du bleibst der Chef — Claude macht die Arbeit, <em>du triffst die Entscheidungen</em>.</div>
+    <div class="st-note">Freigaben, Diffs, Reviews: Jeder wichtige Schritt läuft über deinen Tisch.</div>
+  </section>
+
+  <!-- 12 · Recap -->
+  <section class="slide" data-title="Recap &amp; Merksatz">
+    <div class="s-eyebrow">lesson 02 <span class="dim">·</span> recap</div>
+    <div class="s-title">Das nimmst du mit</div>
+    <div class="recap">
+      <ul class="rl">
+        <li><b>Agentisch:</b> liest, ändert, führt aus — mit deiner Freigabe</li>
+        <li><b>Der Zyklus:</b> Verstehen → Lesen → Ändern → Prüfen → Berichten</li>
+        <li><b>Die Formel:</b> Ziel + Kontext + Grenzen + Ergebnisform</li>
+        <li><b>Diffs lesen</b> bleibt dein Job — gerade bei großen Änderungen</li>
+      </ul>
+      <div class="merk">
+        <div class="tag2">merksatz</div>
+        <p>„Klare Aufgabe rein — geprüftes Ergebnis raus."</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+</div>
+</div>
+
+<script src="../assets/slides.js"></script>
+</body>
+</html>

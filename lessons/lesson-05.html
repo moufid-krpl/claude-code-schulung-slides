@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 05 — Markdown-Dateien &amp; ihre Bedeutung · Claude Code Schulung</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="lesson">
+
+<nav class="topbar">
+  <a class="back" href="../index.html">← Alle Lessons</a>
+  <span class="tb-title">Lesson 05 · Markdown-Dateien &amp; ihre Bedeutung</span>
+  <span class="tb-hint"><b>F</b> Vollbild · <b>←</b> <b>→</b> Navigieren · <b>G</b> Übersicht</span>
+</nav>
+
+<div class="playerbox">
+<div id="fswrap">
+<div class="stage" data-path="lesson-05" tabindex="0" aria-label="Präsentation Lesson 05">
+
+  <!-- 01 · Titel -->
+  <section class="slide" data-title="Titel — Markdown-Dateien &amp; ihre Bedeutung">
+    <div class="s-eyebrow">modul 01 · grundlagen <span class="dim">—</span> lesson 05</div>
+    <div class="t-big">Markdown-Dateien &amp; ihre Bedeutung</div>
+    <div class="t-sub">README, CLAUDE, PLAN, TASKS — vier Textdateien, die dein Projekt für Menschen und für Claude lesbar machen.</div>
+    <div class="t-prompt"><span class="chev">❯</span> CLAUDE.md<span class="cursor"></span></div>
+  </section>
+
+  <!-- 02 · Lernziele -->
+  <section class="slide" data-title="Lernziele">
+    <div class="s-eyebrow">lesson 05 <span class="dim">·</span> lernziele</div>
+    <div class="s-title">Was du nach dieser Lesson kannst</div>
+    <div class="goals">
+      <div class="goal"><span class="n">01</span><div class="g">Markdown lesen &amp; schreiben<small>#, - und ** ** — mehr brauchst du selten</small></div></div>
+      <div class="goal"><span class="n">02</span><div class="g">Die vier wichtigen Dateien einordnen<small>README.md · CLAUDE.md · PLAN.md · TASKS.md</small></div></div>
+      <div class="goal"><span class="n">03</span><div class="g">Eine CLAUDE.md mit echten Regeln aufsetzen<small>sie wird in jeder Session automatisch gelesen</small></div></div>
+      <div class="goal"><span class="n">04</span><div class="g">Gute von schlechten Regeln unterscheiden<small>konkret schlägt vage — jedes Mal</small></div></div>
+    </div>
+  </section>
+
+  <!-- 03 · Was ist Markdown -->
+  <section class="slide" data-title="Was ist Markdown?">
+    <div class="s-eyebrow">lesson 05 <span class="dim">·</span> was ist markdown</div>
+    <div class="s-title">Klartext mit Struktur</div>
+    <div class="split">
+      <ul class="points">
+        <li><b>Einfache Textdateien</b><small>mit Zeichen wie #, - und ** ** als Struktur</small></li>
+        <li><b>Überall lesbar</b><small>Editor, Browser, GitHub — sogar als roher Text verständlich</small></li>
+        <li><b>Perfekt für Git</b><small>Klartext lässt sich vergleichen und versionieren</small></li>
+      </ul>
+      <div class="editor">
+        <div class="tabbar"><span class="tab"><span class="fico">▸</span>beispiel.md</span><span class="tab2">Markdown</span></div>
+        <pre><span class="ln"><span class="h"># Überschrift</span></span>
+<span class="ln"></span>
+<span class="ln">Normaler Text — einfach lesbar.</span>
+<span class="ln"></span>
+<span class="ln"><span class="b">- Listenpunkt eins</span></span>
+<span class="ln"><span class="b">- Listenpunkt zwei</span></span>
+<span class="ln"></span>
+<span class="ln">Das hier ist <span class="s">**fett**</span>.</span></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 · Warum Claude MD liebt -->
+  <section class="slide" data-title="Warum Claude Markdown liebt">
+    <div class="s-eyebrow">lesson 05 <span class="dim">·</span> warum markdown</div>
+    <div class="s-title">Warum Claude Markdown liebt</div>
+    <ul class="points">
+      <li><b>Klartext, kein Spezialformat</b><small>Claude liest und schreibt es fehlerfrei — kein Word, kein PDF nötig</small></li>
+      <li><b>Diff-bar</b><small>jede Änderung ist als Diff sichtbar — ideal fürs Review</small></li>
+      <li><b>Versionierbar</b><small>Git speichert die Historie — nichts geht verloren</small></li>
+      <li><b>Struktur ohne Ballast</b><small>Überschriften und Listen genügen, damit Inhalte auffindbar bleiben</small></li>
+    </ul>
+  </section>
+
+  <!-- 05 · Die vier Dateien -->
+  <section class="slide" data-title="Die vier wichtigen Dateien">
+    <div class="s-eyebrow">lesson 05 <span class="dim">·</span> die vier dateien</div>
+    <div class="s-title">Vier Dateien, vier Aufgaben</div>
+    <div class="cards4">
+      <div class="mcard">
+        <span class="role">Für Menschen</span>
+        <h3>README.md</h3>
+        <p>Was ist das Projekt, wie startet man es? Die Visitenkarte für alle, die neu dazukommen.</p>
+      </div>
+      <div class="mcard hero">
+        <span class="role">Für Claude</span>
+        <h3>CLAUDE.md</h3>
+        <p>Regeln &amp; Arbeitsweise — wird in jeder Session automatisch als Kontext gelesen.</p>
+      </div>
+      <div class="mcard">
+        <span class="role">Für die Richtung</span>
+        <h3>PLAN.md</h3>
+        <p>Der aktuelle Plan: Phasen, Entscheidungen, nächste Schritte — der rote Faden.</p>
+      </div>
+      <div class="mcard">
+        <span class="role">Für den Alltag</span>
+        <h3>TASKS.md</h3>
+        <p>Offene Aufgaben zum Abhaken — für dich und für Claude gleichermaßen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 · CLAUDE.md im Detail -->
+  <section class="slide" data-title="CLAUDE.md im Detail">
+    <div class="s-eyebrow">lesson 05 <span class="dim">·</span> claude.md</div>
+    <div class="s-title">So sieht eine gute CLAUDE.md aus</div>
+    <div class="editor">
+      <div class="tabbar"><span class="tab"><span class="fico">▸</span>CLAUDE.md</span><span class="tab2">wird automatisch gelesen</span></div>
+      <pre><span class="ln"><span class="h">## Projekt</span></span>
+<span class="ln">Interner Web-Shop — React vorn, Node hinten.</span>
+<span class="ln"></span>
+<span class="ln"><span class="h">## Regeln</span></span>
+<span class="ln"><span class="b">- Antworten auf Deutsch</span></span>
+<span class="ln"><span class="b">- Vor jedem Commit: Tests laufen lassen</span></span>
+<span class="ln"><span class="b">- Niemals .env anfassen</span></span>
+<span class="ln"><span class="b">- Bei Unklarheit: erst fragen, dann ändern</span></span></pre>
+    </div>
+    <div class="caption">Kurz, konkret, verbindlich — Claude hält sich <b style="color:var(--cream)">in jeder Session</b> daran.</div>
+  </section>
+
+  <!-- 07 · Wer liest was -->
+  <section class="slide" data-title="Wer liest was?">
+    <div class="s-eyebrow">lesson 05 <span class="dim">·</span> wer liest was</div>
+    <div class="s-title">Wer liest was — und wann pflegen?</div>
+    <table class="ctable">
+      <thead><tr><th>Datei</th><th>Für wen</th><th>Zweck</th><th>Wann pflegen</th></tr></thead>
+      <tbody>
+        <tr><td>README.md</td><td>Menschen</td><td>Projekt verstehen &amp; starten</td><td>bei größeren Änderungen</td></tr>
+        <tr><td>CLAUDE.md</td><td class="good">Claude — automatisch</td><td>Regeln &amp; Arbeitsweise</td><td>sobald eine Regel fehlt</td></tr>
+        <tr><td>PLAN.md</td><td>Team &amp; Claude</td><td>Phasen &amp; nächste Schritte</td><td>bei jedem Phasenwechsel</td></tr>
+        <tr><td>TASKS.md</td><td>dich &amp; Claude</td><td>offene Aufgaben abhaken</td><td>laufend</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 08 · Gute Regeln schreiben -->
+  <section class="slide" data-title="Gute Regeln schreiben">
+    <div class="s-eyebrow">lesson 05 <span class="dim">·</span> gute regeln</div>
+    <div class="s-title">Regeln, die wirklich wirken</div>
+    <div class="dd">
+      <div class="ddcol bad">
+        <h3>✕ &nbsp;Vage</h3>
+        <ul>
+          <li><b>„Sei vorsichtig"</b> — vorsichtig womit?</li>
+          <li><b>„Schreib guten Code"</b> — nicht prüfbar</li>
+          <li><b>„Denk an alles"</b> — bedeutet: an nichts</li>
+        </ul>
+      </div>
+      <div class="ddcol good">
+        <h3>✓ &nbsp;Konkret</h3>
+        <ul>
+          <li><b>„Frag nach, bevor du Dateien löschst"</b></li>
+          <li><b>„Nach jeder Änderung: npm test"</b></li>
+          <li><b>„Antworten auf Deutsch,</b> Code-Kommentare auf Englisch"</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 · Dauerhafter Kontext -->
+  <section class="slide statement" data-title="Dauerhafter Kontext">
+    <div class="st-kicker">dauerhafter kontext</div>
+    <div class="st-text">Was in CLAUDE.md steht, musst du <em>nie wieder</em> erklären.</div>
+    <div class="st-note">Jede neue Session liest die Datei automatisch — deine Regeln gelten ab der ersten Sekunde.</div>
+  </section>
+
+  <!-- 10 · Pflege -->
+  <section class="slide" data-title="Pflege der Dateien">
+    <div class="s-eyebrow">lesson 05 <span class="dim">·</span> pflege</div>
+    <div class="s-title">Drei Gewohnheiten für die Pflege</div>
+    <ul class="points">
+      <li><b>Aktuell halten</b><small>Regeln, die nicht mehr gelten, sofort raus — veraltete Regeln stiften Verwirrung</small></li>
+      <li><b>Kurz halten</b><small>nur was wirklich gilt — eine Seite schlägt zehn</small></li>
+      <li><b>Von Claude ergänzen lassen</b><small>„Nimm das ab jetzt in die CLAUDE.md auf" — fertig</small></li>
+    </ul>
+  </section>
+
+  <!-- 11 · Recap -->
+  <section class="slide" data-title="Recap &amp; Merksatz">
+    <div class="s-eyebrow">lesson 05 <span class="dim">·</span> recap</div>
+    <div class="s-title">Das nimmst du mit</div>
+    <div class="recap">
+      <ul class="rl">
+        <li><b>Markdown = Klartext mit Struktur</b> — diff-bar und versionierbar</li>
+        <li><b>CLAUDE.md wird automatisch gelesen</b> — Regeln gelten in jeder Session</li>
+        <li><b>README, PLAN, TASKS</b> — jede Datei hat ihre eigene Rolle</li>
+        <li><b>Regeln konkret &amp; kurz</b> — und regelmäßig aufräumen</li>
+      </ul>
+      <div class="merk">
+        <div class="tag2">merksatz</div>
+        <p>„Eine Regel, einmal geschrieben — in jeder Session wirksam."</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+</div>
+</div>
+
+<script src="../assets/slides.js"></script>
+</body>
+</html>

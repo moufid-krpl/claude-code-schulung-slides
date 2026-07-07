@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 11 — Artefaktisches Arbeiten &amp; Phasenplanung · Claude Code Schulung</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="lesson">
+
+<nav class="topbar">
+  <a class="back" href="../index.html">← Alle Lessons</a>
+  <span class="tb-title">Lesson 11 · Artefaktisches Arbeiten &amp; Phasenplanung</span>
+  <span class="tb-hint"><b>F</b> Vollbild · <b>←</b> <b>→</b> Navigieren · <b>G</b> Übersicht</span>
+</nav>
+
+<div class="playerbox">
+<div id="fswrap">
+<div class="stage" data-path="lesson-11" tabindex="0" aria-label="Präsentation Lesson 11">
+
+  <!-- 01 · Titel -->
+  <section class="slide" data-title="Titel — Artefaktisches Arbeiten &amp; Phasenplanung">
+    <div class="s-eyebrow">modul 03 · arbeiten mit claude code <span class="dim">—</span> lesson 11</div>
+    <div class="t-big">Artefaktisches Arbeiten &amp; Phasenplanung</div>
+    <div class="t-sub">Erst planen, dann prüfen, dann bauen — warum Zwischenergebnisse dein Projekt retten.</div>
+    <div class="t-prompt"><span class="chev">❯</span> „Plane zuerst. Baue noch nichts."<span class="cursor"></span></div>
+  </section>
+
+  <!-- 02 · Lernziele -->
+  <section class="slide" data-title="Lernziele">
+    <div class="s-eyebrow">lesson 11 <span class="dim">·</span> lernziele</div>
+    <div class="s-title">Was du nach dieser Lesson kannst</div>
+    <div class="goals">
+      <div class="goal"><span class="n">01</span><div class="g">Große Projekte in Phasen zerlegen<small>statt Claude sofort bauen zu lassen</small></div></div>
+      <div class="goal"><span class="n">02</span><div class="g">Artefakte als Zwischenergebnis nutzen<small>Design-Preview, technisches Konzept, Umsetzungsplan</small></div></div>
+      <div class="goal"><span class="n">03</span><div class="g">Freigabe-Gates setzen<small>prüfen, Feedback geben — erst dann geht es weiter</small></div></div>
+      <div class="goal"><span class="n">04</span><div class="g">Fehler früh sterben lassen<small>bevor sie sich durchs ganze Projekt ziehen</small></div></div>
+    </div>
+  </section>
+
+  <!-- 03 · Statement -->
+  <section class="slide statement" data-title="Kernaussage">
+    <div class="st-kicker">die kernaussage zuerst</div>
+    <div class="st-text">Direkt drauflosbauen ist die <em>teuerste</em> Art, ein Projekt zu starten.</div>
+    <div class="st-note">Dreimal umbauen kostet mehr als einmal planen — an Zeit, Geld und Nerven.</div>
+  </section>
+
+  <!-- 04 · Die Arbeitsweise -->
+  <section class="slide" data-title="Die Arbeitsweise (Pipeline)">
+    <div class="s-eyebrow">lesson 11 <span class="dim">·</span> die arbeitsweise</div>
+    <div class="s-title">So läuft ein großes Projekt richtig</div>
+    <div class="pipe">
+      <div class="pstep"><div class="pn">01</div><div class="pt">Verstehen</div><div class="pd">Ziel &amp; Rahmen klären</div></div>
+      <div class="parr">→</div>
+      <div class="pstep"><div class="pn">02</div><div class="pt">Phasen planen</div><div class="pd">Projekt zerlegen lassen</div></div>
+      <div class="parr">→</div>
+      <div class="pstep"><div class="pn">03</div><div class="pt">Artefakt je Phase</div><div class="pd">sichtbares Zwischenergebnis</div></div>
+      <div class="parr">→</div>
+      <div class="pstep hot"><div class="pn">04</div><div class="pt">Freigabe</div><div class="pd">prüfen, Feedback, abnehmen</div></div>
+      <div class="parr">→</div>
+      <div class="pstep"><div class="pn">05</div><div class="pt">Umsetzen</div><div class="pd">erst jetzt wird gebaut</div></div>
+    </div>
+  </section>
+
+  <!-- 05 · Was ist ein Artefakt -->
+  <section class="slide" data-title="Was ist ein Artefakt?">
+    <div class="s-eyebrow">lesson 11 <span class="dim">·</span> artefakte</div>
+    <div class="s-title">Was ist ein Artefakt?</div>
+    <div class="s-sub">Ein sichtbares, prüfbares Zwischenergebnis — deine Entscheidungsgrundlage, bevor gebaut wird.</div>
+    <div class="cards3">
+      <div class="mcard">
+        <span class="role">zum ansehen</span>
+        <h3>Design-Preview</h3>
+        <p>Sehen, wie es aussieht — als HTML-Vorschau, bevor eine Zeile echter Code entsteht.</p>
+      </div>
+      <div class="mcard">
+        <span class="role">zum verstehen</span>
+        <h3>Technisches Konzept</h3>
+        <p>Architektur &amp; Entscheidungen schwarz auf weiß — diskutierbar, solange nichts festbetoniert ist.</p>
+      </div>
+      <div class="mcard">
+        <span class="role">zum steuern</span>
+        <h3>Umsetzungsplan</h3>
+        <p>Schritte, Reihenfolge, Risiken — als PLAN.md direkt im Projekt.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 · Phasenplan konkret -->
+  <section class="slide" data-title="Phasenplan: PLAN.md">
+    <div class="s-eyebrow">lesson 11 <span class="dim">·</span> phasenplan</div>
+    <div class="s-title">So sieht der Phasenplan konkret aus</div>
+    <div class="editor">
+      <div class="tabbar"><span class="tab"><span class="fico">▸</span>PLAN.md</span><span class="tab2">mein-projekt</span></div>
+      <pre><span class="ln"><span class="h">## Phase 1 — UI-Konzept</span></span><span class="ln">Artefakt: <span class="b">Design-Preview (HTML)</span></span><span class="ln">Status:   <span class="s">freigegeben ✓</span></span><span class="ln"> </span><span class="ln"><span class="h">## Phase 2 — Datenmodell</span></span><span class="ln">Artefakt: <span class="b">Technisches Konzept</span></span><span class="ln">Status:   in Prüfung …</span><span class="ln"> </span><span class="ln"><span class="cm"># Phase 3 &amp; 4: gesperrt bis Freigabe von Phase 2</span></span></pre>
+    </div>
+    <div class="caption">Jede Phase hat ein Artefakt und einen Status — der Plan lebt als <code>PLAN.md</code> im Projekt.</div>
+  </section>
+
+  <!-- 07 · Das Freigabe-Gate -->
+  <section class="slide" data-title="Das Freigabe-Gate">
+    <div class="s-eyebrow">lesson 11 <span class="dim">·</span> freigabe-gate</div>
+    <div class="s-title">Warum das Gate zwischen den Phasen?</div>
+    <div class="dd">
+      <div class="ddcol bad">
+        <h3>✕ &nbsp;Ohne Gate</h3>
+        <ul>
+          <li>Claude baut <b>alles am Stück</b> durch</li>
+          <li>Fehler <b>wandern mit</b> — von Phase zu Phase</li>
+          <li>Am Ende: <b>der große Umbau</b></li>
+        </ul>
+      </div>
+      <div class="ddcol good">
+        <h3>✓ &nbsp;Mit Gate</h3>
+        <ul>
+          <li><b>Jede Phase wird abgenommen</b> — von dir</li>
+          <li>Fehler <b>sterben früh</b> — solange sie billig sind</li>
+          <li>Du behältst <b>die Richtung</b> in der Hand</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 · So klingt der Prompt -->
+  <section class="slide" data-title="So klingt der Prompt">
+    <div class="s-eyebrow">lesson 11 <span class="dim">·</span> demo</div>
+    <div class="s-title">So klingt der Prompt</div>
+    <div class="term">
+      <div class="bar2"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="tt">claude code — mein-projekt</span></div>
+      <pre><span class="k">❯</span> „Plane das Projekt in Phasen. Erstelle zuerst
+  <span class="y2">NUR</span> ein Design-Artefakt als HTML-Preview.
+  Baue noch nichts."
+
+<span class="ok">✓</span> PLAN.md erstellt <span class="c">— 4 Phasen, je ein Artefakt</span>
+<span class="ok">✓</span> Artefakt folgt: <span class="k">design-preview.html</span></pre>
+    </div>
+    <div class="caption">Die wichtigste Zeile steht am Ende: <code>„Baue noch nichts."</code> — das Artefakt kommt zuerst.</div>
+  </section>
+
+  <!-- 09 · Meta-Moment -->
+  <section class="slide statement" data-title="Meta-Moment">
+    <div class="st-kicker">aus der praxis</div>
+    <div class="st-text">Genau so ist übrigens <em>diese Schulung</em> entstanden: erst Design-Preview, dann Freigabe, dann Umsetzung.</div>
+    <div class="st-note">Das Verfahren skaliert — vom Ein-Tages-Feature bis zum Monatsprojekt.</div>
+  </section>
+
+  <!-- 10 · Recap -->
+  <section class="slide" data-title="Recap &amp; Merksatz">
+    <div class="s-eyebrow">lesson 11 <span class="dim">·</span> recap</div>
+    <div class="s-title">Das nimmst du mit</div>
+    <div class="recap">
+      <ul class="rl">
+        <li><b>Erst Phasen planen</b> — nicht sofort bauen lassen</li>
+        <li><b>Je Phase ein Artefakt</b> — sichtbar, prüfbar, diskutierbar</li>
+        <li><b>Freigabe-Gate:</b> prüfen, Feedback, dann erst weiter</li>
+        <li>Fehler sterben <b>früh</b> — nicht erst beim großen Umbau</li>
+      </ul>
+      <div class="merk">
+        <div class="tag2">merksatz</div>
+        <p>„Erst sehen, dann bauen."</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+</div>
+</div>
+
+<script src="../assets/slides.js"></script>
+</body>
+</html>

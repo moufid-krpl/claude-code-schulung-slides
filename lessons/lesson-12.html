@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 12 — Agentisches Framework · Claude Code Schulung</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="lesson">
+
+<nav class="topbar">
+  <a class="back" href="../index.html">← Alle Lessons</a>
+  <span class="tb-title">Lesson 12 · Agentisches Framework</span>
+  <span class="tb-hint"><b>F</b> Vollbild · <b>←</b> <b>→</b> Navigieren · <b>G</b> Übersicht</span>
+</nav>
+
+<div class="playerbox">
+<div id="fswrap">
+<div class="stage" data-path="lesson-12" tabindex="0" aria-label="Präsentation Lesson 12">
+
+  <!-- 01 · Titel -->
+  <section class="slide" data-title="Titel — Agentisches Framework">
+    <div class="s-eyebrow">modul 03 · arbeiten mit claude code <span class="dim">—</span> lesson 12</div>
+    <div class="t-big">Agentisches Framework</div>
+    <div class="t-sub">Ein Orchestrator plant, Sub-Agents arbeiten parallel — und die Kontrolle bleibt bei dir.</div>
+    <div class="t-prompt"><span class="chev">❯</span> 4 agents running…<span class="cursor"></span></div>
+  </section>
+
+  <!-- 02 · Lernziele -->
+  <section class="slide" data-title="Lernziele">
+    <div class="s-eyebrow">lesson 12 <span class="dim">·</span> lernziele</div>
+    <div class="s-title">Was du nach dieser Lesson kannst</div>
+    <div class="goals">
+      <div class="goal"><span class="n">01</span><div class="g">Das Orchestrator-Prinzip verstehen<small>deine Haupt-Session plant &amp; verteilt, Sub-Agents liefern</small></div></div>
+      <div class="goal"><span class="n">02</span><div class="g">Typische Agenten-Rollen kennen<small>Planung · UI · Backend · Testing &amp; Review</small></div></div>
+      <div class="goal"><span class="n">03</span><div class="g">Einschätzen, wann sich der Schwarm lohnt<small>und wann er nur Overhead ist</small></div></div>
+      <div class="goal"><span class="n">04</span><div class="g">Kontrolle behalten<small>klare Aufträge, definierte Ergebnisse, finale Review durch dich</small></div></div>
+    </div>
+  </section>
+
+  <!-- 03 · Statement -->
+  <section class="slide statement" data-title="Kernaussage">
+    <div class="st-kicker">das prinzip</div>
+    <div class="st-text">Ein Kopf plant. <em>Viele Hände arbeiten.</em></div>
+    <div class="st-note">Deine Haupt-Session bleibt der Kopf — Sub-Agents übernehmen Teilaufgaben und melden zurück.</div>
+  </section>
+
+  <!-- 04 · Das Bild -->
+  <section class="slide" data-title="Das Bild: Orchestrator &amp; Schwarm">
+    <div class="s-eyebrow">lesson 12 <span class="dim">·</span> das bild</div>
+    <div class="s-title">Orchestrator oben, Schwarm darunter</div>
+    <div class="diag">
+      <div class="dnode hub"><div class="dt">Orchestrator</div><div class="dr">plant &amp; verteilt</div></div>
+      <div class="dconn"></div>
+      <div class="dconn wide"></div>
+      <div class="dfan"><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="dlvl">
+        <div class="dnode"><div class="dt">UI-Agent</div><div class="dr">baut oberfläche</div></div>
+        <div class="dnode"><div class="dt">Backend-Agent</div><div class="dr">logik &amp; daten</div></div>
+        <div class="dnode"><div class="dt">Test-Agent</div><div class="dr">prüft</div></div>
+        <div class="dnode"><div class="dt">Review-Agent</div><div class="dr">bewertet</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 · Die Rollen -->
+  <section class="slide" data-title="Die Rollen">
+    <div class="s-eyebrow">lesson 12 <span class="dim">·</span> die rollen</div>
+    <div class="s-title">Typische Rollen im Schwarm</div>
+    <div class="cards4">
+      <div class="mcard">
+        <span class="role">zerlegen</span>
+        <h3>Planung</h3>
+        <p>Zerlegt das Projekt in klare, unabhängige Teilaufträge.</p>
+      </div>
+      <div class="mcard">
+        <span class="role">bauen</span>
+        <h3>UI</h3>
+        <p>Baut die Oberfläche — parallel zum Rest.</p>
+      </div>
+      <div class="mcard">
+        <span class="role">verdrahten</span>
+        <h3>Backend</h3>
+        <p>Kümmert sich um Logik &amp; Daten.</p>
+      </div>
+      <div class="mcard">
+        <span class="role">prüfen</span>
+        <h3>Testing &amp; Review</h3>
+        <p>Prüft &amp; verreißt — bevor es ein Nutzer tut.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 · Parallel statt nacheinander -->
+  <section class="slide" data-title="Parallel statt nacheinander">
+    <div class="s-eyebrow">lesson 12 <span class="dim">·</span> parallel</div>
+    <div class="s-title">Parallel statt nacheinander</div>
+    <ul class="points">
+      <li><b>Unabhängige Aufgaben laufen gleichzeitig.</b><small>Statt Warteschlange: vier Baustellen parallel.</small></li>
+      <li><b>Jeder Agent liefert einen Bericht.</b><small>Ergebnis in definierter Form — kein Chat-Chaos.</small></li>
+      <li><b>Der Orchestrator führt zusammen.</b><small>Aus vielen Teilergebnissen wird ein Gesamtbild.</small></li>
+      <li><b>Das spart Stunden bei großen Aufgaben.</b><small>Je unabhängiger die Teile, desto größer der Gewinn.</small></li>
+    </ul>
+  </section>
+
+  <!-- 07 · Wann lohnt sich der Schwarm -->
+  <section class="slide" data-title="Wann lohnt sich der Schwarm?">
+    <div class="s-eyebrow">lesson 12 <span class="dim">·</span> einsatz</div>
+    <div class="s-title">Wann lohnt sich der Schwarm?</div>
+    <div class="dd">
+      <div class="ddcol bad">
+        <h3>✕ &nbsp;Kein Fall für Agents</h3>
+        <ul>
+          <li><b>Kleine Einzelaufgabe</b> — eine Session reicht</li>
+          <li><b>Simpler Bugfix</b> — der Overhead frisst den Gewinn</li>
+          <li>„<b>Mal schnell was</b>" — direkt fragen ist schneller</li>
+        </ul>
+      </div>
+      <div class="ddcol good">
+        <h3>✓ &nbsp;Schwarm lohnt sich</h3>
+        <ul>
+          <li><b>Großes Audit</b> über die ganze Codebasis</li>
+          <li><b>Review aus mehreren Blickwinkeln</b> gleichzeitig</li>
+          <li><b>Migration über viele Dateien</b> — parallelisierbar</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 · So klingt der Prompt -->
+  <section class="slide" data-title="So klingt der Prompt">
+    <div class="s-eyebrow">lesson 12 <span class="dim">·</span> demo</div>
+    <div class="s-title">So klingt der Prompt</div>
+    <div class="term">
+      <div class="bar2"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="tt">claude code — mein-projekt</span></div>
+      <pre><span class="k">❯</span> „Starte 3 Sub-Agents: einer prüft die Sicherheit,
+  einer die Performance, einer die Lesbarkeit.
+  Führe die Ergebnisse zu einem Bericht zusammen."
+
+<span class="y2">⚡ 3 agents running…</span> <span class="c">security · performance · lesbarkeit</span>
+<span class="ok">✓</span> Zusammengeführt: <span class="k">review-bericht.md</span></pre>
+    </div>
+    <div class="caption">Drei Blickwinkel parallel — am Ende liest du <code>einen</code> Bericht.</div>
+  </section>
+
+  <!-- 09 · Der Ablauf -->
+  <section class="slide" data-title="Der Ablauf (Pipeline)">
+    <div class="s-eyebrow">lesson 12 <span class="dim">·</span> der ablauf</div>
+    <div class="s-title">Der Ablauf — vom Auftrag zum Ergebnis</div>
+    <div class="pipe">
+      <div class="pstep"><div class="pn">01</div><div class="pt">Auftrag zerlegen</div><div class="pd">klare Teilaufträge formulieren</div></div>
+      <div class="parr">→</div>
+      <div class="pstep"><div class="pn">02</div><div class="pt">Agents parallel</div><div class="pd">jeder arbeitet für sich</div></div>
+      <div class="parr">→</div>
+      <div class="pstep"><div class="pn">03</div><div class="pt">Ergebnisse einsammeln</div><div class="pd">Berichte zusammenführen</div></div>
+      <div class="parr">→</div>
+      <div class="pstep hot"><div class="pn">04</div><div class="pt">Review durch dich</div><div class="pd">die letzte Instanz bist du</div></div>
+    </div>
+  </section>
+
+  <!-- 10 · Kontrolle behalten -->
+  <section class="slide" data-title="Kontrolle behalten">
+    <div class="s-eyebrow">lesson 12 <span class="dim">·</span> kontrolle</div>
+    <div class="s-title">So behältst du die Kontrolle</div>
+    <ul class="points">
+      <li><b>Klarer Auftrag pro Agent.</b><small>Ein Ziel, ein Scope — keine Wundertüten.</small></li>
+      <li><b>Ergebnisform vorgeben.</b><small>„Liefere einen Bericht mit …" — sonst bekommst du Prosa.</small></li>
+      <li><b>Zusammenführen lassen.</b><small>Der Orchestrator baut das Gesamtbild — nicht du per Hand.</small></li>
+      <li><b>Die letzte Entscheidung bleibt bei dir.</b><small>Agents liefern Vorschläge — abgenommen wird von dir.</small></li>
+    </ul>
+  </section>
+
+  <!-- 11 · Recap -->
+  <section class="slide" data-title="Recap &amp; Merksatz">
+    <div class="s-eyebrow">lesson 12 <span class="dim">·</span> recap</div>
+    <div class="s-title">Das nimmst du mit</div>
+    <div class="recap">
+      <ul class="rl">
+        <li><b>Orchestrator plant,</b> Sub-Agents arbeiten parallel</li>
+        <li><b>Berichte statt Chaos</b> — Ergebnisform ist definiert</li>
+        <li>Lohnt bei <b>Audits, Reviews, Migrationen</b> — nicht bei Kleinkram</li>
+        <li><b>Finale Review durch dich</b> — immer</li>
+      </ul>
+      <div class="merk">
+        <div class="tag2">merksatz</div>
+        <p>„Der Schwarm arbeitet — die Entscheidungen triffst du."</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+</div>
+</div>
+
+<script src="../assets/slides.js"></script>
+</body>
+</html>

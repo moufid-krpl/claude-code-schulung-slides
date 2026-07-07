@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 09 — Skills &amp; MCP-Server verstehen · Claude Code Schulung</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="lesson">
+
+<nav class="topbar">
+  <a class="back" href="../index.html">← Alle Lessons</a>
+  <span class="tb-title">Lesson 09 · Skills &amp; MCP-Server verstehen</span>
+  <span class="tb-hint"><b>F</b> Vollbild · <b>←</b> <b>→</b> Navigieren · <b>G</b> Übersicht</span>
+</nav>
+
+<div class="playerbox">
+<div id="fswrap">
+<div class="stage" data-path="lesson-09" tabindex="0" aria-label="Präsentation Lesson 09">
+
+  <!-- 01 · Titel -->
+  <section class="slide" data-title="Titel — Skills &amp; MCP-Server verstehen">
+    <div class="s-eyebrow">modul 02 · fortgeschrittene einrichtung <span class="dim">—</span> lesson 09</div>
+    <div class="t-big">Skills &amp; MCP-Server verstehen</div>
+    <div class="t-sub">Zwei Wege, Claude Code zu erweitern: Wissen, das du mitgibst — und Werkzeuge, die du anschließt.</div>
+    <div class="t-prompt"><span class="chev">❯</span> /skill …<span class="cursor"></span></div>
+  </section>
+
+  <!-- 02 · Lernziele -->
+  <section class="slide" data-title="Lernziele">
+    <div class="s-eyebrow">lesson 09 <span class="dim">·</span> lernziele</div>
+    <div class="s-title">Was du nach dieser Lesson kannst</div>
+    <div class="goals">
+      <div class="goal"><span class="n">01</span><div class="g">Die zwei Erweiterungs-Wege unterscheiden<small>Skills = Wissen &amp; Abläufe · MCP-Server = Werkzeuge &amp; Verbindungen</small></div></div>
+      <div class="goal"><span class="n">02</span><div class="g">Skills verstehen und passende finden<small>Markdown-Anleitungen als Slash-Command — und der Skill-Finder hilft beim Suchen</small></div></div>
+      <div class="goal"><span class="n">03</span><div class="g">MCP-Server einordnen<small>externe Programme, deren Tools in deiner Session auftauchen</small></div></div>
+      <div class="goal"><span class="n">04</span><div class="g">Die richtige Wahl treffen<small>Ablauf → Skill · System → MCP · oft beides kombiniert</small></div></div>
+    </div>
+  </section>
+
+  <!-- 03 · Statement -->
+  <section class="slide statement" data-title="Kernaussage">
+    <div class="st-kicker">die idee dahinter</div>
+    <div class="st-text">Claude Code kann viel. Mit Skills und MCP kann es <em>dein</em> Setup.</div>
+    <div class="st-note">Erweiterungen machen aus dem allgemeinen Assistenten deinen Assistenten — mit deinen Standards und deinen Systemen.</div>
+  </section>
+
+  <!-- 04 · Zwei Erweiterungs-Wege -->
+  <section class="slide" data-title="Zwei Erweiterungs-Wege">
+    <div class="s-eyebrow">lesson 09 <span class="dim">·</span> zwei wege</div>
+    <div class="s-title">Wissen mitgeben — oder Werkzeuge anschließen</div>
+    <div class="cards2">
+      <div class="mcard">
+        <span class="role">weg 1 · wissen &amp; abläufe</span>
+        <h3>Skills</h3>
+        <p>Wiederverwendbare Anleitungen als Markdown: Standards, Checklisten, Vorgehen — aufrufbar als Slash-Command.</p>
+        <p>„Committe nach unserem Standard" → /commit-helper<br>„Prüfe vor dem Merge die Checkliste" → /pr-check</p>
+      </div>
+      <div class="mcard">
+        <span class="role">weg 2 · werkzeuge &amp; verbindungen</span>
+        <h3>MCP-Server</h3>
+        <p>Externe Programme, die Claude neue Werkzeuge geben — Zugriff auf Systeme außerhalb deines Projekts.</p>
+        <p>n8n-Workflows lesen &amp; bauen<br>Browser steuern, Datenbanken abfragen</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 · Was Skills sind -->
+  <section class="slide" data-title="Was Skills sind">
+    <div class="s-eyebrow">lesson 09 <span class="dim">·</span> skills</div>
+    <div class="s-title">Wissen, das du einmal aufschreibst</div>
+    <ul class="points">
+      <li><b>Markdown-Anleitungen.</b><small>Eine Datei beschreibt, wie eine Aufgabe richtig gemacht wird — Schritt für Schritt.</small></li>
+      <li><b>Als Slash-Command aufrufbar.</b><small>z.&nbsp;B. /commit-helper — Claude folgt dann exakt dieser Anleitung.</small></li>
+      <li><b>Bringen Standards &amp; Checklisten mit.</b><small>Dein Vorgehen wird Teil von Claude — nicht jedes Mal neu erklärt.</small></li>
+      <li><b>Einmal schreiben — immer nutzen.</b><small>Gleiches Ergebnis, egal wer den Skill startet oder wann.</small></li>
+    </ul>
+  </section>
+
+  <!-- 06 · Wann Skills sinnvoll sind -->
+  <section class="slide" data-title="Wann ein Skill sinnvoll ist">
+    <div class="s-eyebrow">lesson 09 <span class="dim">·</span> einsatz</div>
+    <div class="s-title">Wann ein Skill sinnvoll ist</div>
+    <ul class="points">
+      <li><b>Wiederkehrende Abläufe.</b><small>„Release vorbereiten" läuft jede Woche gleich — perfekter Skill-Kandidat.</small></li>
+      <li><b>Team-Standards.</b><small>Commit-Format, Branch-Namen, Code-Style — einmal festgelegt, immer eingehalten.</small></li>
+      <li><b>Qualitäts-Checklisten.</b><small>Vor jedem Merge dieselben fünf Prüfpunkte — kein Punkt wird vergessen.</small></li>
+      <li><b>Projekt-Spezialwissen.</b><small>Wie das Deployment in genau diesem Projekt funktioniert — inklusive Stolperfallen.</small></li>
+    </ul>
+  </section>
+
+  <!-- 07 · Skills finden -->
+  <section class="slide" data-title="Demo: Skills finden">
+    <div class="s-eyebrow">lesson 09 <span class="dim">·</span> demo</div>
+    <div class="s-title">Nicht selbst schreiben — erst suchen</div>
+    <div class="term">
+      <div class="bar2"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="tt">claude code — mein-projekt</span></div>
+      <pre><span class="k">❯</span> /skill-finder <span class="y2">„PDF erzeugen"</span>
+<span class="c">  Durchsuche verfügbare Skills …</span>
+
+<span class="ok">✓</span> 3 Treffer:
+  <span class="ok">●</span> <span class="k">pdf</span> <span class="c">— PDFs erstellen, befüllen &amp; zusammenfügen</span>
+  <span class="ok">●</span> <span class="k">docx</span> <span class="c">— Word-Dokumente erzeugen</span>
+  <span class="ok">●</span> <span class="k">report-builder</span> <span class="c">— Berichte mit Layout &amp; Diagrammen</span></pre>
+    </div>
+    <div class="caption">Es gibt viele fertige Skills — der <code>/skill-finder</code> sucht den passenden für deine Aufgabe.</div>
+  </section>
+
+  <!-- 08 · Was MCP-Server sind -->
+  <section class="slide" data-title="Was MCP-Server sind">
+    <div class="s-eyebrow">lesson 09 <span class="dim">·</span> mcp-server</div>
+    <div class="s-title">MCP: die Brücke zu externen Systemen</div>
+    <div class="diag">
+      <div class="dlvl"><div class="dnode hub"><div class="dt">Claude Code</div><div class="dr">deine session</div></div></div>
+      <div class="dconn"></div>
+      <div class="dconn wide"></div>
+      <div class="dfan"><span></span><span></span><span></span><span></span></div>
+      <div class="dlvl">
+        <div class="dnode"><div class="dt">n8n</div><div class="dr">workflows</div></div>
+        <div class="dnode"><div class="dt">Browser</div><div class="dr">webseiten</div></div>
+        <div class="dnode"><div class="dt">Datenbank</div><div class="dr">queries</div></div>
+      </div>
+    </div>
+    <div class="caption">MCP = <b style="color:var(--cream)">Model Context Protocol</b> — Server werden in der Konfiguration registriert, ihre Tools erscheinen in der Session.</div>
+  </section>
+
+  <!-- 09 · Nützliche MCP-Beispiele -->
+  <section class="slide" data-title="Nützliche MCP-Beispiele">
+    <div class="s-eyebrow">lesson 09 <span class="dim">·</span> beispiele</div>
+    <div class="s-title">Vier MCP-Server aus der Praxis</div>
+    <div class="cards4">
+      <div class="mcard">
+        <span class="role">automation</span>
+        <h3>n8n</h3>
+        <p>Workflows bauen &amp; debuggen</p>
+      </div>
+      <div class="mcard">
+        <span class="role">web</span>
+        <h3>Browser</h3>
+        <p>Webseiten öffnen &amp; testen</p>
+      </div>
+      <div class="mcard">
+        <span class="role">daten</span>
+        <h3>Datenbank</h3>
+        <p>Queries &amp; Schema abfragen</p>
+      </div>
+      <div class="mcard">
+        <span class="role">ui</span>
+        <h3>Design</h3>
+        <p>UI-Komponenten liefern</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · Skill vs. MCP -->
+  <section class="slide" data-title="Skill vs. MCP">
+    <div class="s-eyebrow">lesson 09 <span class="dim">·</span> vergleich</div>
+    <div class="s-title">Skill vs. MCP — auf einen Blick</div>
+    <table class="ctable">
+      <thead><tr><th></th><th>Skill</th><th>MCP-Server</th></tr></thead>
+      <tbody>
+        <tr><td>Was es ist</td><td>Anleitung als Markdown</td><td>externes Programm</td></tr>
+        <tr><td>Was es liefert</td><td>Wissen &amp; Abläufe</td><td>Werkzeuge &amp; Zugriff</td></tr>
+        <tr><td>Typischer Fall</td><td>„Committe nach unserem Standard"</td><td>„Lies meine n8n-Workflows"</td></tr>
+        <tr><td>Faustregel</td><td class="good">„so machst du es"</td><td class="good">„damit kannst du es"</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 11 · Wann was? -->
+  <section class="slide" data-title="Wann was?">
+    <div class="s-eyebrow">lesson 09 <span class="dim">·</span> entscheidung</div>
+    <div class="s-title">Wann was? Die Entscheidungs-Regel</div>
+    <div class="flow">
+      <div class="frow">
+        <div class="fbox"><b>Wiederkehrender Ablauf oder Standard</b> — immer gleiches Vorgehen</div>
+        <div class="farrow">→</div>
+        <div class="fmodel">skill<small>Wissen einmal aufschreiben</small></div>
+      </div>
+      <div class="frow">
+        <div class="fbox"><b>Externes System anbinden</b> — n8n, Browser, Datenbank &amp; Co.</div>
+        <div class="farrow">→</div>
+        <div class="fmodel">mcp-server<small>Werkzeuge in die Session holen</small></div>
+      </div>
+      <div class="frow">
+        <div class="fbox"><b>Ablauf nutzt externes System</b> — z.&nbsp;B. „Workflow nach Standard bauen"</div>
+        <div class="farrow">→</div>
+        <div class="fmodel">skill + mcp<small>der Skill ruft die MCP-Tools auf</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 · Recap -->
+  <section class="slide" data-title="Recap &amp; Merksatz">
+    <div class="s-eyebrow">lesson 09 <span class="dim">·</span> recap</div>
+    <div class="s-title">Das nimmst du mit</div>
+    <div class="recap">
+      <ul class="rl">
+        <li><b>Skills</b> = Wissen &amp; Abläufe — Markdown, als Slash-Command</li>
+        <li><b>MCP-Server</b> = Werkzeuge &amp; Verbindungen zu externen Systemen</li>
+        <li><b>Faustregel:</b> Ablauf → Skill · System → MCP · oft beides</li>
+        <li>Der <b>Skill-Finder</b> sucht fertige Skills für deine Aufgabe</li>
+      </ul>
+      <div class="merk">
+        <div class="tag2">merksatz</div>
+        <p>„Skill = so machst du es. MCP = damit kannst du es."</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+</div>
+</div>
+
+<script src="../assets/slides.js"></script>
+</body>
+</html>

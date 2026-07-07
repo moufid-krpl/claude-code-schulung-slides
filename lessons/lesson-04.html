@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson 04 — Arbeitsumgebung &amp; Projektordner · Claude Code Schulung</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="lesson">
+
+<nav class="topbar">
+  <a class="back" href="../index.html">← Alle Lessons</a>
+  <span class="tb-title">Lesson 04 · Arbeitsumgebung &amp; Projektordner</span>
+  <span class="tb-hint"><b>F</b> Vollbild · <b>←</b> <b>→</b> Navigieren · <b>G</b> Übersicht</span>
+</nav>
+
+<div class="playerbox">
+<div id="fswrap">
+<div class="stage" data-path="lesson-04" tabindex="0" aria-label="Präsentation Lesson 04">
+
+  <!-- 01 · Titel -->
+  <section class="slide" data-title="Titel — Arbeitsumgebung &amp; Projektordner">
+    <div class="s-eyebrow">modul 01 · grundlagen <span class="dim">—</span> lesson 04</div>
+    <div class="t-big">Arbeitsumgebung &amp; Projektordner</div>
+    <div class="t-sub">Ein zentraler Ort, klare Grenzen, saubere Struktur — die Basis für jedes gute Ergebnis.</div>
+    <div class="t-prompt"><span class="chev">❯</span> code ./mein-projekt<span class="cursor"></span></div>
+  </section>
+
+  <!-- 02 · Lernziele -->
+  <section class="slide" data-title="Lernziele">
+    <div class="s-eyebrow">lesson 04 <span class="dim">·</span> lernziele</div>
+    <div class="s-title">Was du nach dieser Lesson kannst</div>
+    <div class="goals">
+      <div class="goal"><span class="n">01</span><div class="g">Einen zentralen Arbeitsordner anlegen<small>z. B. Dev/Projekte/ — ein Ort für alle Claude-Code-Projekte</small></div></div>
+      <div class="goal"><span class="n">02</span><div class="g">Pro Projekt einen eigenen Ordner führen<small>klare Grenzen statt Datei-Wildwuchs</small></div></div>
+      <div class="goal"><span class="n">03</span><div class="g">Test- und Produktivprojekte trennen<small>Spielwiese hier, Kundenarbeit dort</small></div></div>
+      <div class="goal"><span class="n">04</span><div class="g">Die Grundstruktur neuer Projekte aufsetzen<small>README.md, CLAUDE.md, .gitignore, src/</small></div></div>
+    </div>
+  </section>
+
+  <!-- 03 · Statement -->
+  <section class="slide statement" data-title="Kernaussage">
+    <div class="st-kicker">warum ordnung zählt</div>
+    <div class="st-text">Claude Code ist so gut wie <em>der Ordner, in dem es arbeitet</em>.</div>
+    <div class="st-note">Der geöffnete Ordner ist der Kontext. Ordnung darin heißt: besserer Kontext — und damit bessere Ergebnisse.</div>
+  </section>
+
+  <!-- 04 · Der zentrale Arbeitsordner -->
+  <section class="slide" data-title="Der zentrale Arbeitsordner">
+    <div class="s-eyebrow">lesson 04 <span class="dim">·</span> arbeitsordner</div>
+    <div class="s-title">Ein Ort für alles: Dev/Projekte/</div>
+    <div class="editor">
+      <div class="tabbar"><span class="tab"><span class="fico">▸</span>Dev/Projekte/</span><span class="tab2">Explorer-Ansicht</span></div>
+      <pre><span class="ln"><span class="h">Dev/</span></span>
+<span class="ln">  <span class="h">Projekte/</span>                <span class="cm"># ein Ort für alle Projekte</span></span>
+<span class="ln">    <span class="b">kunde-a-shop/</span>          <span class="cm"># Kundenprojekt</span></span>
+<span class="ln">    <span class="b">tool-zeiterfassung/</span>    <span class="cm"># internes Tool</span></span>
+<span class="ln">    <span class="b">spielwiese/</span>            <span class="cm"># zum Testen &amp; Lernen</span></span></pre>
+    </div>
+    <div class="caption">Ein zentraler Arbeitsordner — nie wieder suchen, <b style="color:var(--cream)">wo</b> ein Projekt liegt.</div>
+  </section>
+
+  <!-- 05 · Ein Projekt = ein Ordner -->
+  <section class="slide" data-title="Ein Projekt = ein Ordner">
+    <div class="s-eyebrow">lesson 04 <span class="dim">·</span> ein projekt, ein ordner</div>
+    <div class="s-title">Ein Projekt = ein Ordner</div>
+    <ul class="points">
+      <li><b>Jedes Projekt bekommt genau einen Unterordner</b><small>klare Grenze: was drinliegt, gehört zum Projekt</small></li>
+      <li><b>Sprechende Namen, klein geschrieben</b><small>kunde-a-shop statt „Neuer Ordner (2)"</small></li>
+      <li><b>Alles zum Projekt liegt im Projekt</b><small>keine Dateien verstreut auf Desktop und Downloads</small></li>
+    </ul>
+    <div class="snote" style="margin-top:2.8cqi"><b>Wichtig:</b> VS Code immer im <b>Projektordner</b> öffnen — nicht im Überordner. Sonst sieht Claude alle Projekte gleichzeitig und keines richtig.</div>
+  </section>
+
+  <!-- 06 · Test vs. Produktiv -->
+  <section class="slide" data-title="Test vs. Produktiv">
+    <div class="s-eyebrow">lesson 04 <span class="dim">·</span> test vs. produktiv</div>
+    <div class="s-title">Spielwiese und Kundenarbeit trennen</div>
+    <div class="dd">
+      <div class="ddcol bad">
+        <h3>✕ &nbsp;Alles gemischt</h3>
+        <ul>
+          <li><b>Experimente im Kundenprojekt</b> — „nur mal kurz testen"</li>
+          <li>Testdateien landen <b>im Produktiv-Code</b></li>
+          <li>Ein Fehlgriff trifft <b>direkt den Kunden</b></li>
+        </ul>
+      </div>
+      <div class="ddcol good">
+        <h3>✓ &nbsp;Sauber getrennt</h3>
+        <ul>
+          <li><b>spielwiese/</b> für Tests, Übungen, Experimente</li>
+          <li><b>Kundenprojekte</b> bleiben unberührt davon</li>
+          <li>Erst in der Spielwiese lernen, <b>dann übertragen</b></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 · Grundstruktur -->
+  <section class="slide" data-title="Grundstruktur: neues Projekt">
+    <div class="s-eyebrow">lesson 04 <span class="dim">·</span> grundstruktur</div>
+    <div class="s-title">So startet jedes neue Projekt</div>
+    <div class="editor">
+      <div class="tabbar"><span class="tab"><span class="fico">▸</span>mein-projekt/</span><span class="tab2">Grundstruktur</span></div>
+      <pre><span class="ln"><span class="h">mein-projekt/</span></span>
+<span class="ln">  <span class="b">README.md</span>     <span class="cm"># für Menschen: was ist das Projekt?</span></span>
+<span class="ln">  <span class="b">CLAUDE.md</span>     <span class="cm"># für Claude: Regeln &amp; Arbeitsweise</span></span>
+<span class="ln">  <span class="b">.gitignore</span>    <span class="cm"># was Git (und Claude) ignorieren soll</span></span>
+<span class="ln">  <span class="b">src/</span>          <span class="cm"># der eigentliche Code</span></span></pre>
+    </div>
+    <div class="caption">Vier Bausteine reichen für den Start — den Rest kann Claude <b style="color:var(--cream)">für dich</b> anlegen.</div>
+  </section>
+
+  <!-- 08 · Häufige Fehler -->
+  <section class="slide" data-title="Häufige Fehler">
+    <div class="s-eyebrow">lesson 04 <span class="dim">·</span> häufige fehler</div>
+    <div class="s-title">Vier Fehler, die dich Kontext kosten</div>
+    <ul class="points">
+      <li><b>Den Überordner geöffnet</b><small>Claude sieht zwölf Projekte — und versteht keines richtig</small></li>
+      <li><b>Downloads/ als Arbeitsordner</b><small>Rechnungen, Installer, Zips — Chaos als Kontext</small></li>
+      <li><b>Ein Riesenprojekt für alles</b><small>je größer der Misch-Ordner, desto vager die Ergebnisse</small></li>
+      <li><b>Kopien statt Git</b><small>„projekt-final-v2-NEU" — Versionierung übernimmt das Werkzeug, nicht der Explorer</small></li>
+    </ul>
+  </section>
+
+  <!-- 09 · Recap -->
+  <section class="slide" data-title="Recap &amp; Merksatz">
+    <div class="s-eyebrow">lesson 04 <span class="dim">·</span> recap</div>
+    <div class="s-title">Das nimmst du mit</div>
+    <div class="recap">
+      <ul class="rl">
+        <li><b>Ein zentraler Arbeitsordner</b> — z. B. Dev/Projekte/</li>
+        <li><b>Ein Projekt = ein Ordner</b> — VS Code immer dort öffnen</li>
+        <li><b>Spielwiese getrennt</b> von Kunden- und Produktivprojekten</li>
+        <li><b>Grundstruktur:</b> README.md, CLAUDE.md, .gitignore, src/</li>
+      </ul>
+      <div class="merk">
+        <div class="tag2">merksatz</div>
+        <p>„Ordnung im Ordner ist Ordnung im Kopf — auch für Claude."</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+</div>
+</div>
+
+<script src="../assets/slides.js"></script>
+</body>
+</html>
