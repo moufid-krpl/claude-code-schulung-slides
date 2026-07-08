@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Lesson 08 — Long Time Memory einrichten · Claude Code Schulung</title>
+<title>Lesson 08 — Long Time Memory mit Obsidian · Claude Code Schulung</title>
 <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body class="lesson">
 
 <nav class="topbar">
   <a class="back" href="../index.html">← Alle Lessons</a>
-  <span class="tb-title">Lesson 08 · Long Time Memory einrichten</span>
+  <span class="tb-title">Lesson 08 · Long Time Memory mit Obsidian</span>
   <span class="tb-hint"><b>F</b> Vollbild · <b>←</b> <b>→</b> Navigieren · <b>G</b> Übersicht</span>
 </nav>
 
@@ -19,11 +19,11 @@
 <div class="stage" data-path="lesson-08" tabindex="0" aria-label="Präsentation Lesson 08">
 
   <!-- 01 · Titel -->
-  <section class="slide" data-title="Titel — Long Time Memory einrichten">
+  <section class="slide" data-title="Titel — Long Time Memory mit Obsidian">
     <div class="s-eyebrow">modul 02 · fortgeschrittene einrichtung <span class="dim">—</span> lesson 08</div>
-    <div class="t-big">Long Time Memory einrichten</div>
-    <div class="t-sub">Ein dateibasiertes Gedächtnis aus Markdown — damit Claude behält, was du ihm einmal beigebracht hast.</div>
-    <div class="t-prompt"><span class="chev">❯</span> MEMORY.md<span class="cursor"></span></div>
+    <div class="t-big">Long Time Memory mit Obsidian</div>
+    <div class="t-sub">Ein Gedächtnis für alle Projekte — sichtbar für dich in Obsidian, direkt angebunden für Claude per MCP.</div>
+    <div class="t-prompt"><span class="chev">❯</span> claude mcp add obsidian …<span class="cursor"></span></div>
   </section>
 
   <!-- 02 · Lernziele -->
@@ -31,128 +31,219 @@
     <div class="s-eyebrow">lesson 08 <span class="dim">·</span> lernziele</div>
     <div class="s-title">Was du nach dieser Lesson kannst</div>
     <div class="goals">
-      <div class="goal"><span class="n">01</span><div class="g">Verstehen, warum jede Session bei Null startet<small>ohne Memory keine Erinnerung an frühere Sessions</small></div></div>
-      <div class="goal"><span class="n">02</span><div class="g">Einen Memory-Ordner mit Markdown-Dateien aufbauen<small>MEMORY.md als Index plus Themen-Dateien — auch ein Obsidian-Vault geht</small></div></div>
-      <div class="goal"><span class="n">03</span><div class="g">Das Memory über CLAUDE.md anbinden<small>Claude liest es zu Session-Beginn — und aktualisiert es selbst</small></div></div>
-      <div class="goal"><span class="n">04</span><div class="g">Entscheiden, was reingehört — und was nicht<small>plus die Pflege-Routine, die es aktuell hält</small></div></div>
+      <div class="goal"><span class="n">01</span><div class="g">Einen Obsidian-Vault als globales Gedächtnis anlegen<small>im zentralen Ordner aus Lesson 07 — ein Ort für alles Projektübergreifende</small></div></div>
+      <div class="goal"><span class="n">02</span><div class="g">Den Obsidian-MCP installieren und verbinden<small>Local-REST-API-Plugin + ein Befehl — Claude bekommt echte Obsidian-Werkzeuge</small></div></div>
+      <div class="goal"><span class="n">03</span><div class="g">Das Memory global verankern<small>CLAUDE.md, README und obsidian.env im globalen Ordner — wird vor jedem Projekt gelesen</small></div></div>
+      <div class="goal"><span class="n">04</span><div class="g">Das Gedächtnis testen und pflegen<small>/memory-Check, Live-Test über zwei Projekte, klare Pflege-Regeln</small></div></div>
     </div>
   </section>
 
   <!-- 03 · Statement -->
   <section class="slide statement" data-title="Kernaussage">
     <div class="st-kicker">das problem</div>
-    <div class="st-text">Jede Session startet bei Null — <em>außer du gibst Claude ein Gedächtnis.</em></div>
-    <div class="st-note">Ein Ordner mit Markdown-Dateien genügt: Claude liest ihn beim Start — und schreibt Neues selbst hinein.</div>
+    <div class="st-text">Jede Session startet bei Null —<br><em>außer du gibst Claude ein Gedächtnis.</em></div>
+    <div class="st-note">Ab heute wohnt es in Obsidian: sichtbar für dich als Graph, direkt beschreibbar für Claude über den MCP.</div>
   </section>
 
-  <!-- 04 · Das Konzept -->
-  <section class="slide" data-title="Das Konzept">
-    <div class="s-eyebrow">lesson 08 <span class="dim">·</span> das konzept</div>
-    <div class="s-title">Ein Gedächtnis — alle Projekte</div>
+  <!-- 04 · Architektur -->
+  <section class="slide" data-title="Die Architektur">
+    <div class="s-eyebrow">lesson 08 <span class="dim">·</span> die architektur</div>
+    <div class="s-title">Ein Zeiger, ein Vault, alle Projekte</div>
     <div class="diag">
       <div class="dlvl">
-        <div class="dnode hub"><div class="dt">Memory-Ordner</div><div class="dr">markdown · ein ort</div></div>
+        <div class="dnode"><div class="dt">~/.claude/CLAUDE.md</div><div class="dr">zeiger · wird in jedem projekt zuerst gelesen</div></div>
       </div>
       <div class="dconn"></div>
-      <div class="dconn wide"></div>
-      <div class="dfan"><span></span><span></span><span></span><span></span></div>
       <div class="dlvl">
-        <div class="dnode"><div class="dt">Projekt A</div><div class="dr">liest &amp; ergänzt</div></div>
-        <div class="dnode"><div class="dt">Projekt B</div><div class="dr">liest &amp; ergänzt</div></div>
-        <div class="dnode"><div class="dt">Neue Session</div><div class="dr">startet informiert</div></div>
+        <div class="dnode hub"><div class="dt">Obsidian-Vault „claude-memory"</div><div class="dr">im globalen ordner · index immer geladen</div></div>
+      </div>
+      <div class="dconn"></div>
+      <div class="dfan"><span></span><span></span><span></span></div>
+      <div class="dlvl">
+        <div class="dnode"><div class="dt">Projekt A</div><div class="dr">liest &amp; schreibt via mcp</div></div>
+        <div class="dnode"><div class="dt">Projekt B</div><div class="dr">liest &amp; schreibt via mcp</div></div>
+        <div class="dnode"><div class="dt">Obsidian (du)</div><div class="dr">graph · backlinks · mobil</div></div>
       </div>
     </div>
-    <div class="caption">Egal welches Projekt, egal wie neu die Session — das Wissen liegt an <b style="color:var(--cream)">einem</b> Ort.</div>
   </section>
 
-  <!-- 05 · Die Struktur -->
-  <section class="slide" data-title="Die Struktur">
+  <!-- 05 · Warum Obsidian -->
+  <section class="slide" data-title="Warum Obsidian?">
+    <div class="s-eyebrow">lesson 08 <span class="dim">·</span> warum obsidian</div>
+    <div class="s-title">Drei Gründe für genau dieses Werkzeug</div>
+    <div class="cards3">
+      <div class="mcard">
+        <span class="role">Nur Markdown</span>
+        <h3>Deine Dateien</h3>
+        <p>Ein Vault ist ein normaler Ordner voller .md-Dateien — kein Lock-in, Git-tauglich, für immer lesbar.</p>
+      </div>
+      <div class="mcard hero">
+        <span class="role">Graph &amp; Backlinks</span>
+        <h3>Sichtbares Wissen</h3>
+        <p>Du siehst dein Gedächtnis wachsen: Verknüpfungen, Rückverweise, Volltextsuche — auch mobil.</p>
+      </div>
+      <div class="mcard">
+        <span class="role">MCP-Schnittstelle</span>
+        <h3>Direkter Draht</h3>
+        <p>Claude liest, schreibt und durchsucht den Vault über echte Obsidian-Werkzeuge — nicht nur als Dateien.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 · Vault anlegen -->
+  <section class="slide" data-title="Schritt 1: Vault anlegen">
+    <div class="s-eyebrow">lesson 08 <span class="dim">·</span> schritt 1</div>
+    <div class="s-title">Der Vault — in vier Minuten angelegt</div>
+    <div class="pipe">
+      <div class="pstep"><div class="pn">01</div><div class="pt">Obsidian installieren</div><div class="pd">obsidian.md — kostenlos für Windows, Mac &amp; Linux</div></div>
+      <div class="parr">→</div>
+      <div class="pstep"><div class="pn">02</div><div class="pt">Vault anlegen</div><div class="pd">„claude-memory" im zentralen Ordner (Lesson 07)</div></div>
+      <div class="parr">→</div>
+      <div class="pstep hot"><div class="pn">03</div><div class="pt">Struktur von Claude</div><div class="pd">die Grundstruktur einfach anlegen lassen</div></div>
+      <div class="parr">→</div>
+      <div class="pstep"><div class="pn">04</div><div class="pt">In Obsidian öffnen</div><div class="pd">ansehen, Graph bewundern — fertig</div></div>
+    </div>
+  </section>
+
+  <!-- 07 · Struktur -->
+  <section class="slide" data-title="Die Vault-Struktur">
     <div class="s-eyebrow">lesson 08 <span class="dim">·</span> die struktur</div>
-    <div class="s-title">Ein Index — dahinter Themen-Dateien</div>
+    <div class="s-title">Ein Index, vier Schubladen</div>
     <div class="editor">
-      <div class="tabbar"><span class="tab"><span class="fico">▸</span>memory/</span><span class="tab2">ordnerstruktur</span></div>
-      <pre><span class="ln"><span class="b">memory/</span></span><span class="ln">  <span class="h">MEMORY.md</span>              <span class="cm"># Index: was liegt wo?</span></span><span class="ln">  arbeitsweisen.md       <span class="cm"># wie du arbeitest &amp; entscheidest</span></span><span class="ln">  projekt-wissen.md      <span class="cm"># was im Code nicht steht</span></span><span class="ln">  entscheidungen.md      <span class="cm"># was entschieden wurde — und warum</span></span></pre>
+      <div class="tabbar"><span class="tab"><span class="fico">▸</span>claude-memory\</span><span class="tab2">C:\claude-zentrale\</span></div>
+      <pre><span class="ln"><span class="h">MEMORY.md</span>               <span class="cm"># Index: 1 Zeile pro Notiz — wird IMMER geladen</span></span><span class="ln"><span class="b">arbeitsweisen.md</span>        <span class="cm"># wie du arbeitest: Regeln, Vorlieben, No-Gos</span></span><span class="ln"><span class="b">entscheidungen.md</span>       <span class="cm"># wichtige Entscheidungen + das Warum</span></span><span class="ln"><span class="b">wissen\</span>                 <span class="cm"># Fach- &amp; Tool-Wissen</span></span><span class="ln">  n8n-instanzen.md</span><span class="ln"><span class="b">projekte\</span>               <span class="cm"># 1 Datei pro Projekt: Stand &amp; Besonderheiten</span></span><span class="ln">  kunde-a-shop.md</span><span class="ln">  tool-zeiterfassung.md</span></pre>
     </div>
-    <div class="caption">Der Index bleibt kurz — die Details wohnen in den Themen-Dateien.</div>
   </section>
 
-  <!-- 06 · Anbindung über CLAUDE.md -->
-  <section class="slide" data-title="Anbindung über CLAUDE.md">
-    <div class="s-eyebrow">lesson 08 <span class="dim">·</span> anbindung</div>
-    <div class="s-title">CLAUDE.md macht das Memory verbindlich</div>
-    <div class="editor">
-      <div class="tabbar"><span class="tab"><span class="fico">▸</span>CLAUDE.md</span><span class="tab2">ausschnitt</span></div>
-      <pre><span class="ln"><span class="h">## Memory</span></span><span class="ln"></span><span class="ln">- Liegt in: <span class="s">C:/claude-zentrale/memory/</span></span><span class="ln">- Lies <span class="b">MEMORY.md</span> zu Beginn jeder Session.</span><span class="ln">- Neue dauerhafte Erkenntnisse: <span class="b">dort ergänzen.</span></span><span class="ln">- Veraltetes dabei gleich entfernen.</span></pre>
+  <!-- 08 · MCP einrichten -->
+  <section class="slide" data-title="Schritt 2: Obsidian-MCP einrichten">
+    <div class="s-eyebrow">lesson 08 <span class="dim">·</span> schritt 2 — der mcp</div>
+    <div class="s-title">Plugin rein, ein Befehl — verbunden</div>
+    <div class="split">
+      <ul class="points">
+        <li><b>Plugin „Local REST API" installieren.</b><small>Obsidian → Einstellungen → Community-Plugins → suchen, installieren, aktivieren.</small></li>
+        <li><b>HTTP-Server aktivieren &amp; API-Key kopieren.</b><small>Beides direkt in den Plugin-Einstellungen — der Key ist dein Zugang.</small></li>
+        <li><b>MCP registrieren, Claude Code neu starten.</b><small>Ein Befehl (rechts) — danach stehen die Obsidian-Tools in jeder Session bereit.</small></li>
+      </ul>
+      <div class="term">
+        <div class="bar2"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="tt">terminal</span></div>
+        <pre><span class="k">❯</span> claude mcp add --transport http obsidian \
+    http://127.0.0.1:27123/mcp/ \
+    --header <span class="c">"Authorization: Bearer &lt;API-KEY&gt;"</span>
+<span class="ok">✓</span> MCP-Server „obsidian" hinzugefügt
+
+<span class="k">❯</span> /mcp
+  <span class="ok">●</span> obsidian — verbunden, Tools verfügbar</pre>
+      </div>
     </div>
-    <div class="caption">Lesen beim Start, ergänzen bei neuen Erkenntnissen — beides steht als Regel in CLAUDE.md.</div>
   </section>
 
-  <!-- 07 · Was rein gehört -->
+  <!-- 09 · Was der MCP kann -->
+  <section class="slide" data-title="Was dir der MCP im Alltag gibt">
+    <div class="s-eyebrow">lesson 08 <span class="dim">·</span> die möglichkeiten</div>
+    <div class="s-title">Was dir der Obsidian-MCP im Alltag gibt</div>
+    <div class="cards4">
+      <div class="mcard">
+        <span class="role">Schreiben</span>
+        <h3>Notizen anlegen &amp; pflegen</h3>
+        <p>„Merke dir: …" landet als saubere Notiz im Vault — inklusive Index-Update.</p>
+      </div>
+      <div class="mcard hero">
+        <span class="role">Suchen</span>
+        <h3>Vault-Suche</h3>
+        <p>„Was wissen wir über Kunde A?" — Claude durchsucht den Vault über Obsidians Index.</p>
+      </div>
+      <div class="mcard">
+        <span class="role">Präzise ändern</span>
+        <h3>Gezielt patchen</h3>
+        <p>Einzelne Abschnitte oder Frontmatter ändern — statt ganze Dateien zu überschreiben.</p>
+      </div>
+      <div class="mcard">
+        <span class="role">Kontext</span>
+        <h3>Aktive Notiz &amp; Daily Notes</h3>
+        <p>„Arbeite mit der Notiz, die ich gerade offen habe" — oder Tagesnotizen als Arbeitslog.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · obsidian.env -->
+  <section class="slide" data-title="Die globale obsidian.env">
+    <div class="s-eyebrow">lesson 08 <span class="dim">·</span> zugangsdaten</div>
+    <div class="s-title">Alles Wichtige in einer .env — wie in Lesson 07</div>
+    <div class="editor">
+      <div class="tabbar"><span class="tab"><span class="fico">▸</span>obsidian.env</span><span class="tab2">C:\claude-zentrale\zugangsdaten\</span></div>
+      <pre><span class="ln"><span class="cm"># Obsidian Long Time Memory — Zugang &amp; Orte</span></span><span class="ln"><span class="h">OBSIDIAN_API_URL</span>=<span class="s">http://127.0.0.1:27123</span></span><span class="ln"><span class="h">OBSIDIAN_API_KEY</span>=<span class="s">xxxxxxxxxxxxxxxx</span>        <span class="cm"># aus den Plugin-Einstellungen</span></span><span class="ln"><span class="h">OBSIDIAN_VAULT_PATH</span>=<span class="s">C:/claude-zentrale/claude-memory</span></span><span class="ln"></span><span class="ln"><span class="cm"># Regel aus Lesson 07: referenzieren, nie ausgeben, nie committen</span></span></pre>
+    </div>
+    <div class="snote" style="align-self:center;margin-top:2.2cqi"><b>Ein Ort für alles Globale:</b> Die obsidian.env liegt neben der global.env — jede Config (MCP, Skripte, neuer Rechner) bedient sich hier, statt Werte zu verstreuen.</div>
+  </section>
+
+  <!-- 11 · Verankern -->
+  <section class="slide" data-title="Global verankern: CLAUDE.md + README">
+    <div class="s-eyebrow">lesson 08 <span class="dim">·</span> verankern</div>
+    <div class="s-title">Ein Eintrag — und jedes Projekt kennt dein Gedächtnis</div>
+    <div class="editor">
+      <div class="tabbar"><span class="tab"><span class="fico">▸</span>CLAUDE.md</span><span class="tab2">C:\claude-zentrale\ — gilt für ALLE Projekte</span></div>
+      <pre><span class="ln"><span class="h">## Long Time Memory (Obsidian)</span></span><span class="ln">- Vault: <span class="s">C:/claude-zentrale/claude-memory/</span> — Zugriff via Obsidian-MCP</span><span class="ln">- Zugang &amp; Orte: <span class="s">zugangsdaten/obsidian.env</span></span><span class="ln"><span class="s">@claude-memory/MEMORY.md</span>   <span class="cm"># Index wird IMMER mitgeladen</span></span><span class="ln"></span><span class="ln"><span class="h">Regeln:</span> Neue dauerhafte Erkenntnis → sofort in der passenden Notiz</span><span class="ln">ergänzen + Index aktualisieren. Veraltetes löschen, Index kompakt halten.</span><span class="ln"><span class="b">Keine Secrets ins Memory</span> — die liegen in der .env-Struktur.</span></pre>
+    </div>
+    <div class="snote" style="align-self:center;margin-top:2.2cqi"><b>Die Anbindung:</b> <code style="font-family:var(--f-mono)">~/.claude/CLAUDE.md</code> enthält nur eine Zeile — <code style="font-family:var(--f-mono)">@C:/claude-zentrale/CLAUDE.md</code> — und wird in <b>jedem</b> Projekt automatisch zuerst gelesen. Die README.md daneben erklärt die Struktur für Menschen.</div>
+  </section>
+
+  <!-- 12 · Live-Test -->
+  <section class="slide" data-title="Check &amp; Live-Test">
+    <div class="s-eyebrow">lesson 08 <span class="dim">·</span> der beweis</div>
+    <div class="s-title">Erst prüfen, dann über zwei Projekte testen</div>
+    <div class="term wide">
+      <div class="bar2"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="tt">claude code — projekt-a</span></div>
+      <pre><span class="k">❯</span> /memory
+  <span class="ok">✓</span> ~/.claude/CLAUDE.md <span class="c">→</span> claude-zentrale/CLAUDE.md <span class="c">→</span> MEMORY.md geladen
+<span class="k">❯</span> Merke dir dauerhaft: Deployments machen wir immer erst auf Staging.
+<span class="ok">✓</span> arbeitsweisen.md ergänzt <span class="c">(via Obsidian-MCP) · Index aktualisiert</span>
+
+<span class="c">— neue Session, ANDERES Projekt —</span>
+<span class="k">❯</span> Wie deployen wir hier?
+  Laut deiner Arbeitsweise: <span class="ok">immer erst auf Staging</span> — soll ich so vorgehen?</pre>
+    </div>
+    <div class="caption">Und in Obsidian siehst du die neue Notiz sofort — samt Verknüpfung im Graph.</div>
+  </section>
+
+  <!-- 13 · Do/Don't -->
   <section class="slide" data-title="Was rein gehört — und was nicht">
-    <div class="s-eyebrow">lesson 08 <span class="dim">·</span> inhalt</div>
+    <div class="s-eyebrow">lesson 08 <span class="dim">·</span> pflege</div>
     <div class="s-title">Was rein gehört — und was nicht</div>
     <div class="dd">
+      <div class="ddcol bad">
+        <h3>✕ &nbsp;Gehört nicht rein</h3>
+        <ul>
+          <li><b>Passwörter &amp; API-Keys</b> — die wohnen in der .env (Lesson 07!)</li>
+          <li><b>Tagesgeschäft &amp; Einmaliges</b> — das ist Chat, kein Gedächtnis</li>
+          <li><b>Alles sammeln, nie löschen</b> — ein Museum hilft niemandem</li>
+        </ul>
+      </div>
       <div class="ddcol good">
         <h3>✓ &nbsp;Gehört rein</h3>
         <ul>
-          <li><b>Dauerhafte Arbeitsweisen</b> — „Deployments immer erst auf Staging"</li>
-          <li><b>Projektwissen,</b> das nicht im Code steht — Kontext, Ansprechpartner, Eigenheiten</li>
-          <li><b>Entscheidungen + Begründung</b> — damit sie niemand versehentlich rückgängig macht</li>
-        </ul>
-      </div>
-      <div class="ddcol bad">
-        <h3>✕ &nbsp;Bleibt draußen</h3>
-        <ul>
-          <li><b>Secrets &amp; Zugangsdaten</b> — die gehören in die .env (Lesson 07)</li>
-          <li><b>Tagesgeschäft</b> — Einmal-Aufgaben veralten schneller, als du sie löschst</li>
-          <li><b>Was Git &amp; Code schon wissen</b> — Historie und Code dokumentieren sich selbst</li>
+          <li><b>Arbeitsweisen &amp; Entscheidungen</b> — inklusive dem Warum</li>
+          <li><b>Projekt- &amp; Tool-Wissen</b>, das nicht im Code steht</li>
+          <li><b>Pflege als Gewohnheit</b> — nach großen Aufgaben aktualisieren, Veraltetes raus</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- 08 · Praxis-Demo -->
-  <section class="slide" data-title="Praxis-Demo">
-    <div class="s-eyebrow">lesson 08 <span class="dim">·</span> demo</div>
-    <div class="s-title">Ein Satz — und es ist gemerkt</div>
-    <div class="term">
-      <div class="bar2"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="tt">claude code — mein-projekt</span></div>
-      <pre><span class="k">❯</span> Speichere im Memory: Deployments immer erst
-  auf Staging, nie direkt auf Production.
-
-<span class="c">● Lese memory/MEMORY.md …</span>
-<span class="ok">✓</span> arbeitsweisen.md ergänzt
-<span class="ok">✓</span> Index in MEMORY.md aktualisiert</pre>
-    </div>
-    <div class="caption">Ab der nächsten Session ist die Regel einfach da — in <b style="color:var(--cream)">jedem</b> Projekt.</div>
-  </section>
-
-  <!-- 09 · Pflege-Routine -->
-  <section class="slide" data-title="Pflege-Routine">
-    <div class="s-eyebrow">lesson 08 <span class="dim">·</span> pflege</div>
-    <div class="s-title">Ein Gedächtnis braucht Pflege</div>
-    <ul class="points">
-      <li><b>Nach großen Aufgaben aktualisieren lassen.</b><small>„Was davon gehört ins Memory?" — Claude ergänzt selbst.</small></li>
-      <li><b>Veraltetes löschen.</b><small>Ein falsches Gedächtnis ist schlimmer als gar keins.</small></li>
-      <li><b>Kompakt halten.</b><small>Kurzer Index, knappe Themen-Dateien — keine Romane.</small></li>
-      <li><b>Ab und zu selbst reinlesen.</b><small>Es ist Klartext in Markdown — dein Wissen, keine Blackbox.</small></li>
-    </ul>
-  </section>
-
-  <!-- 10 · Recap -->
+  <!-- 14 · Recap -->
   <section class="slide" data-title="Recap &amp; Merksatz">
     <div class="s-eyebrow">lesson 08 <span class="dim">·</span> recap</div>
     <div class="s-title">Das nimmst du mit</div>
     <div class="recap">
       <ul class="rl">
-        <li><b>Ohne Memory</b> startet jede Session bei Null</li>
-        <li><b>Markdown-Ordner + Index</b> — angebunden über CLAUDE.md</li>
-        <li><b>Rein:</b> Arbeitsweisen, Wissen, Entscheidungen — keine Secrets</li>
-        <li><b>Pflege gehört dazu:</b> ergänzen, ausmisten, kompakt halten</li>
+        <li><b>Vault im globalen Ordner</b> — nur Markdown, sichtbar in Obsidian</li>
+        <li><b>MCP = direkter Draht</b> — schreiben, suchen, patchen, aktive Notiz</li>
+        <li><b>Global verankert</b> — CLAUDE.md + README + obsidian.env, Index immer geladen</li>
+        <li>Pflege gehört dazu: <b>aktualisieren, löschen, kompakt halten</b></li>
       </ul>
       <div class="merk">
         <div class="tag2">merksatz</div>
-        <p>„Einmal gelernt, nie wieder vergessen — wenn du es aufschreibst."</p>
+        <p>„Dein Wissen wohnt in Obsidian — Claude zieht bei jedem Start mit ein."</p>
       </div>
     </div>
   </section>
